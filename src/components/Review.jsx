@@ -17,7 +17,8 @@ const Review = () => {
   };
 
   const handleRandom = () => {
-    setIndex(Math.floor(Math.random() * 4));
+    const newIndex = Math.floor(Math.random() * 4);
+    newIndex === index ? handleRandom() : setIndex(newIndex);
   };
 
   return (
