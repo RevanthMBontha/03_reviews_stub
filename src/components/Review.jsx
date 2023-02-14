@@ -10,15 +10,18 @@ const Review = () => {
 
   const handlePrev = () => {
     index > 0 ? setIndex(index - 1) : setIndex(people.length - 1);
+    setCanReadMore(true);
   };
 
   const handleNext = () => {
     index < people.length - 1 ? setIndex(index + 1) : setIndex(0);
+    setCanReadMore(true);
   };
 
   const handleRandom = () => {
     const newIndex = Math.floor(Math.random() * 4);
     newIndex === index ? handleRandom() : setIndex(newIndex);
+    setCanReadMore(true);
   };
 
   return (
