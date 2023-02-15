@@ -40,9 +40,38 @@ const Review = () => {
 
   if (isLoading) {
     return (
-      <div className="review">
-        <h3>loading...</h3>
-      </div>
+      <article className="review">
+        <div className="img-container">
+          <img
+            src="../../public/images/profile.webp"
+            alt="profile"
+            className="person-img"
+          />
+          <span className="quote-icon">
+            <FaQuoteRight />
+          </span>
+        </div>
+
+        <h4 className="author">John Doe</h4>
+        <p className="job">PROFESSION</p>
+        <p className="info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolore
+          facilis alias libero, voluptas minima. Fugiat laborum velit quis earum
+          suscipit veniam, minus quibusdam, dignissimos natus animi ratione,
+          dolorem eligendi?
+        </p>
+        <div className="button-container">
+          <button className="prev-btn" onClick={handlePrev}>
+            <FaChevronLeft />
+          </button>
+          <button className="next-btn" onClick={handleNext}>
+            <FaChevronRight />
+          </button>
+          <button className="random-btn" onClick={handleRandom}>
+            surprise me!
+          </button>
+        </div>
+      </article>
     );
   } else {
     const { name, image, text, job } = people[index];
